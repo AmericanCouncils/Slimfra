@@ -9,7 +9,7 @@
     "autoload": {
         "psr-0": { "Slimfra": "src/" }
     },
-	"target-dir": "Slimfra/",
+	"minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
 		"silex/silex": "dev-master",
