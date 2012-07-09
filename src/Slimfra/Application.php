@@ -143,12 +143,12 @@ class Application extends BaseApplication {
 		$this->register(new DoctrineServiceProvider(), array(
 			'db.options' => array(
 		        'driver'   => 'pdo_sqlite',
-		        'path'     => $configs['data_dir'].'/db.sqlite',
+		        'path'     => $this['data_dir'].'/db.sqlite',
 			),
 		));
 
 		$this->register(new SessionServiceProvider(), array(
-			'session.storage.save_path' => $configs['cache_dir']."/sessions",	
+			'session.storage.save_path' => $this['cache_dir']."/sessions",	
 		));
 
 		$this->register(new TwigServiceProvider(), array(
