@@ -46,17 +46,17 @@ class Application extends BaseApplication {
             return new ControllerResolver($app, $app['logger']);
         });
         
-        //register custom config
-        $config = $this->getDefaultConfigs();
-        if(is_array($configData)) {
+        //register custom config first
+        $config = $this->getDefaultPaths();
+        if (is_array($configData)) {
             $config = array_merge($config, $configData);
-        } else if(is_string($configData) && file_exists($configData)) {
+        } elseif (is_string($configData) && file_exists($configData)) {
             $config = array_merge($config, include($configData));
         }
-        foreach($config as $key => $val) {
+        foreach ($config as $key => $val) {
             $this[$key] = $val;
         }
-		
+        
 		//check for routes in config
 		if(isset($this['routes'])) {
 			foreach($this['routes'] as $def => $controller) {
@@ -119,20 +119,19 @@ class Application extends BaseApplication {
 	 *
 	 * @return array
 	 */
-    protected function getDefaultConfigs() {
-		$cwd = getcwd();
-		
+    protected function getDefaultPaths() {
+        $this['root_dir'] = getcwd();
+
 		//define default paths first
 		$configs = array(
-			'root_dir' => $cwd,
-			'cache_dir' => $cwd."/app/cache",
-			'templates_dir' => $cwd."/templates",
-			'data_dir' => $cwd."/app/data",
-			'config_dir' => $cwd."/app/config",
-			'assets_dir' => $cwd."/assets",
-			'uploads_dir' => $cwd."/uploads",
+			'cache_dir' => $this['root_dir']."/app/cache",
+			'templates_dir' => $this['root_dir']."/templates",
+			'data_dir' => $this['root_dir']."/app/data",
+			'config_dir' => $this['root_dir']."/app/config",
+			'assets_dir' => $this['root_dir']."/assets",
+			'uploads_dir' => $this['root_dir']."/uploads",
 		);
-		
+        
 		return $configs;
     }
 	
