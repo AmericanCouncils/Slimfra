@@ -13,7 +13,7 @@
 >
     <testsuites>
         <testsuite name="Slimfra Test Suite">
-            <directory>./src/Tests/</directory>
+            <directory>./src/Slimfra/Tests/</directory>
         </testsuite>
     </testsuites>
 

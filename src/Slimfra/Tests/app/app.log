@@ -1,0 +1,6 @@
+[2012-07-20 21:20:56] app.INFO: Matched route "GET_" (parameters: "_controller": "Slimfra\Tests\Mock\TestController::testRequest", "_route": "GET_") [] []
+[2012-07-20 21:20:56] app.INFO: > GET / [] []
+[2012-07-20 21:20:56] app.INFO: < 200 [] []
+[2012-07-20 21:21:08] app.INFO: Matched route "GET_" (parameters: "_controller": "Slimfra\Tests\Mock\TestController::testRequest", "_route": "GET_") [] []
+[2012-07-20 21:21:08] app.INFO: > GET / [] []
+[2012-07-20 21:21:08] app.INFO: < 200 [] []
