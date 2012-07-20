@@ -42,18 +42,6 @@ abstract class Controller implements \ArrayAccess {
     }
 	
 	/**
-	 * Automatically check for a logged in user - this will redirect a user to login if they have not.
-	 * 
-	 * Note: NOT YET IMPLEMENTED
-	 *
-	 * @return void
-	 */
-	protected function authenticate() {
-		//TODO: figure this out
-		$this->app['user.authenticator']->authenticate($this->app['user']);
-	}
-    
-	/**
 	 * Implements \ArrayAccess for accessing '$this->app' for configuration and services
 	 */
     public function offsetExists($key) {
