@@ -6,7 +6,7 @@ use Silex\ControllerResolver as SilexResolver;
 
 /**
  * A minor modification to the default Silex ControllerResolver, which injects the app instance into
- * the controller, allowing controllers to refer to "$this->app".
+ * the controller, allowing Slimfra\Controller instances to reference the application via "$this->app".
  *
  * @package Slimfra
  * @author Evan Villemez
