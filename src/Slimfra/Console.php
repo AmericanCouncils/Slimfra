@@ -1,7 +1,7 @@
 <?php
 
 namespace Slimfra;
-use Symfony\Component\Console\Appliction;
+use Symfony\Component\Console\Application as ConsoleApplication;
 use Symfony\Component\Console\Command\Command;
 
 /**
@@ -12,7 +12,7 @@ use Symfony\Component\Console\Command\Command;
  * @package Slimfra
  * @author Evan Villemez
  */
-class Console extends Application
+class Console extends ConsoleApplication
 {
     protected $app;
     
@@ -25,8 +25,8 @@ class Console extends Application
     {
         $this->app = $app;
         
-        $name = isset($app['app.name']) ? $app['app.name'], "Slimfra Console";
-        $version = isset($app['app.version']) ? $app['app.version'], "Slimfra Console";
+        $name = isset($app['app.name']) ? $app['app.name'] : "Slimfra Console";
+        $version = isset($app['app.version']) ? $app['app.version'] : "Slimfra Console";
         
         parent::__construct($name, $version);
     }
