@@ -275,7 +275,6 @@ class Application extends BaseApplication {
 	 * @param string $errstr 
 	 * @param string $errfile 
 	 * @param int $errline 
-	 * @return void
 	 * @throws ErrorException
 	 */
 	public function handleError($errno, $errstr, $errfile, $errline) {
