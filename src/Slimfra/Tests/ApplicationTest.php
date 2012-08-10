@@ -5,9 +5,13 @@ namespace Slimfra\Tests;
 use Slimfra\Application;
 use Symfony\Component\HttpFoundation\Request;
 
-//TODO: test the app
 class ApplicationTest extends \PHPUnit_Framework_TestCase {
 	
+    public function setUp()
+    {
+        @unlink(__DIR__."/app");
+    }
+    
 	public function testInstantiateEmpty() {
 		$app = new Application();
 		$this->assertNotNull($app);

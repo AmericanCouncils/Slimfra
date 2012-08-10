@@ -3,6 +3,8 @@
 namespace Slimfra;
 use Symfony\Component\Console\Application as ConsoleApplication;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Slimfra Console automatically injects the Slimfra Application into
@@ -43,4 +45,13 @@ class Console extends ConsoleApplication
         parent::add($command);
     }
     
+    /**
+     * {@inheritdoc}
+     */
+     public function run(InputInterface $input = null, OutputInterface $output = null) {
+        $this->app->boot();
+        
+        return parent::run($input, $output);
+    }
+
 }
