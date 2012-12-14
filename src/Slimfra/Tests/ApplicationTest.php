@@ -46,6 +46,36 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase {
         $this->assertSame($overriddenCacheDir, $app['session.storage.save_path']);
     }
     
+    public function testBootstrapWithAllDefaultServices()
+    {
+        chdir(__DIR__);
+        mkdir(__DIR__."/templates");
+        $app = new Application(array(
+            'app.service.db' => true,
+            'app.service.mail' => true,
+            'app.service.cache' => true,
+            'app.service.forms' => true,
+            'app.service.logging' => true,
+            'app.service.sessions' => true,
+            'app.service.validation' => true,
+            'app.service.http_cache' => true,
+            'app.service.templating' => true,
+            'app.service.translation' => true,
+        ));
+        
+        //request all services, no exceptions should be thrown
+        $s = $app['db'];
+        $s = $app['mailer'];
+        $s = $app['twig'];
+        $s = $app['cache'];
+        $s = $app['form.factory'];
+        $s = $app['logger'];
+        $s = $app['validator'];
+        $s = $app['http_cache'];
+        $s = $app['translator'];
+        
+        rmdir(__DIR__."/templates");
+    }
     
     public function testRequest()
     {
