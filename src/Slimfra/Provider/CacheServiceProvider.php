@@ -4,6 +4,7 @@ namespace Slimfra\Provider;
 
 use Silex\ServiceProviderInterface;
 use Silex\Application;
+use Doctrine\Common\Cache\FilesystemCache;
 
 /**
  * Provides an application-level cache service via Doctrine Common's cache component. Defaults to file-based cache.
@@ -17,7 +18,7 @@ class CacheServiceProvider implements ServiceProviderInterface
 	public function register(Application $app)
 	{
 		$app['cache'] = $app->share(function($c) {
-            return new Doctrine\Common\FileCache($c['cache.path']);
+            return new FilesystemCache($c['cache.path']);
         });
 	}
     
