@@ -69,7 +69,7 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase {
         $s = $app['twig'];
         $s = $app['cache'];
         $s = $app['form.factory'];
-        $s = $app['logger'];
+        $s = $app['monolog'];
         $s = $app['validator'];
         $s = $app['http_cache'];
         $s = $app['translator'];
