@@ -79,7 +79,7 @@ class Application extends BaseApplication {
         
 		//set custom/overridden Silex services
         $this['resolver'] = $this->share(function () use ($app) {
-            return new ControllerResolver($app, $app['logger']);
+            return ($app['app.service.logging']) ? new ControllerResolver($app, $app['monolog']) : new ControllerResolver($app);
         });
 
         //register custom providers
