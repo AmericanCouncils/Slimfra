@@ -12,9 +12,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
-        "silex/silex": "dev-master"
-    },
-    "require-dev": {
+        "silex/silex": "dev-master",
         "symfony/security": ">=2.3,<2.4-dev",
         "symfony/config": ">=2.3,<2.4-dev",
         "symfony/locale": ">=2.3,<2.4-dev",
