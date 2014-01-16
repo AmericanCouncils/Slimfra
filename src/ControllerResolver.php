@@ -11,8 +11,8 @@ use Silex\ControllerResolver as SilexResolver;
  * @package Slimfra
  * @author Evan Villemez
  */
-class ControllerResolver extends SilexResolver {
-
+class ControllerResolver extends SilexResolver
+{
     /**
      * Returns a callable for the given controller.
      *
@@ -31,13 +31,13 @@ class ControllerResolver extends SilexResolver {
         if (!class_exists($class)) {
             throw new \InvalidArgumentException(sprintf('Class "%s" does not exist.', $class));
         }
-		
-		//inject the app into the controller, if it's a Slimfra Controller
-		$controller = new $class();
-		if ($controller instanceof Controller) {
-			$controller->setApp($this->app);
-		}
-		
+
+        //inject the app into the controller, if it's a Slimfra Controller
+        $controller = new $class();
+        if ($controller instanceof Controller) {
+            $controller->setApp($this->app);
+        }
+
         return array($controller, $method);
     }
 

@@ -4,8 +4,8 @@ namespace Slimfra\Tests\Mock;
 
 class TestController extends \Slimfra\Controller
 {
-	public function testRequest()
+    public function testRequest()
     {
-        return "Success";
+        return $this['hello.name'];
     }
 }

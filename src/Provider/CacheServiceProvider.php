@@ -14,17 +14,17 @@ use Doctrine\Common\Cache\FilesystemCache;
  */
 class CacheServiceProvider implements ServiceProviderInterface
 {
-	
-	public function register(Application $app)
-	{
-		$app['cache'] = $app->share(function($c) {
+
+    public function register(Application $app)
+    {
+        $app['cache'] = $app->share(function ($c) {
             return new FilesystemCache($c['cache.path']);
         });
-	}
-    
+    }
+
     public function boot(Application $app)
     {
-        
+
     }
-	
+
 }
